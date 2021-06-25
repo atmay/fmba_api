@@ -4,7 +4,7 @@ from .models import Employee, Department
 
 class EmployeeSerializer(serializers.ModelSerializer):
     # в поле отобразится имя департамента
-    department = serializers.StringRelatedField()
+    department = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = Employee
