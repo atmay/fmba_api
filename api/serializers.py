@@ -12,6 +12,9 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
+    # в поле отобразится фамилия и имя каждого из сотрудников департамента
+    employees = serializers.StringRelatedField(read_only=True, many=True)
+
     class Meta:
         model = Department
         fields = ['id', 'name', 'employees']
