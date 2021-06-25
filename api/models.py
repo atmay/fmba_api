@@ -11,7 +11,7 @@ class Department(models.Model):
 class Employee(models.Model):
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
-    department_id = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
 
     def __str__(self):
         return f'{self.surname} {self.name}'
